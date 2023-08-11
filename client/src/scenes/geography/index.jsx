@@ -93,7 +93,7 @@ const Geography = () => {
             ]}
           />
         ) : (
-          <>Loading...</>
+          <Box margin="12px 16px">Loading...</Box>
         )}
       </Box>
     </Box>

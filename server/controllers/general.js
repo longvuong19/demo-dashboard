@@ -14,12 +14,12 @@ export const getUser = async (req, res) => {
 
 export const getDashboardStats = async (req, res) => {
   try {
-    // hardcode
-    const currentMonth = "November";
+    // Hardcode
+    const currentMonth = "February";
     const currentYear = 2021;
-    const currentDay = "2021-11-15";
+    const currentDay = "2021-02-19";
 
-    /* Recent Transactions */
+    /* Transaction gần đây */
     const transactions = await Transaction.find()
       .limit(50)
       .sort({ createdOn: -1 });
@@ -34,6 +34,8 @@ export const getDashboardStats = async (req, res) => {
       monthlyData,
       salesByCategory,
     } = overallStat[0];
+
+    // console.log(overallStat);
 
     const thisMonthStats = overallStat[0].monthlyData.find(({ month }) => {
       return month === currentMonth;

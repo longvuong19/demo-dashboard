@@ -6,6 +6,7 @@ import { useGetSalesQuery } from "state/api";
 import OverviewChart from "components/OverviewChart";
 import "react-datepicker/dist/react-datepicker.css";
 import Header from "components/Header";
+import "./style.css";
 
 const Daily = () => {
   const [startDate, setStartDate] = useState(new Date("2021-02-01"));
@@ -54,7 +55,7 @@ const Daily = () => {
     <Box margin="24px 40px">
       <Header title="DAILY SALES" subtitle="Chart of daily sales" />
       <Box height="75vh">
-        <Box display="flex" justifyContent="flex-end">
+        <Box display="flex" justifyContent="flex-end" gap="12px">
           <ReactDatePicker
             selected={startDate}
             onChange={(date) => setStartDate(date)}

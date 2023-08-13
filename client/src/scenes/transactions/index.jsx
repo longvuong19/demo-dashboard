@@ -49,7 +49,7 @@ const Transactions = () => {
     },
     {
       field: "cost",
-      headerName: "Cost",
+      headerName: "COST",
       flex: 0.5,
       renderCell: (params) => `$${Number(params.value).toFixed(2)}`,
     },

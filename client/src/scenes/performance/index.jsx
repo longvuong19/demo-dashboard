@@ -37,7 +37,7 @@ const Performance = () => {
     },
     {
       field: "cost",
-      headerName: "Cost",
+      headerName: "COST",
       flex: 0.7,
       renderCell: (params) => `$${Number(params.value).toFixed(2)}`,
     },

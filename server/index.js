@@ -11,7 +11,7 @@ import salesRoutes from "./routes/sales.js";
 import generalRoutes from "./routes/general.js";
 
 // Import Data
-import User from "./models/user.js";
+import User from "./models/UserSchema.js";
 import Product from "./models/Product.js";
 import ProductStat from "./models/ProductStat.js";
 import Transaction from "./models/Transaction.js";

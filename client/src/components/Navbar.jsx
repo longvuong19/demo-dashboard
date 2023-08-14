@@ -23,15 +23,19 @@ import {
 } from "@mui/material";
 import FlexBetween from "./FlexBetween";
 import profileImage from "assets/profile.jpg";
+import { useNavigate } from "react-router-dom";
 
 const Navbar = ({ isSidebarOpen, setIsSidebarOpen, user }) => {
   const dispatch = useDispatch();
   const theme = useTheme();
-
+  const navigate = useNavigate();
   const [anchorEl, setAnchorEl] = useState(null);
   const isOpen = Boolean(anchorEl);
   const handleClick = (event) => setAnchorEl(event.currentTarget);
-  const handleClose = () => setAnchorEl(null);
+  const handleClose = () => {
+    setAnchorEl(null);
+    navigate("/");
+  };
 
   // console.log(user);
   return (

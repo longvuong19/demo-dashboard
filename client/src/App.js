@@ -4,6 +4,7 @@ import { useMemo } from "react";
 import { useSelector } from "react-redux";
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import { themeSettings } from "theme";
+import axios from "axios";
 import Dashboard from "scenes/dashboard";
 import Layout from "scenes/layout";
 import Products from "scenes/products";
@@ -16,6 +17,10 @@ import Monthly from "scenes/monthly";
 import Breakdown from "scenes/breakdown";
 import Admin from "scenes/admin";
 import Performance from "scenes/performance";
+import LoginPage from "scenes/auth/LoginPage";
+import RegisterPage from "scenes/auth/RegisterPage";
+
+axios.defaults.baseURL = "http://localhost:5001";
 
 function App() {
   const mode = useSelector((state) => state.global.mode); // nhập mode từ folder state.
@@ -32,8 +37,10 @@ function App() {
 
           <Routes>
             {/* Component phía dưới đều sẽ có thẻ Layout là thẻ parent chính (Navbar và Sidebar được render ở mọi component) */}
+            <Route path="/" element={<LoginPage />} />
+            <Route path="/register" element={<RegisterPage />} />
             <Route element={<Layout />}>
-              <Route path="/" element={<Navigate to="/dashboard" replace />} />
+              {/* <Route path="/" element={<Navigate to="/dashboard" replace />} /> */}
               <Route path="/dashboard" element={<Dashboard />} />
               <Route path="/products" element={<Products />} />
               <Route path="/customers" element={<Customers />} />

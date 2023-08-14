@@ -5,6 +5,7 @@ import cors from "cors";
 import dotenv from "dotenv";
 import helmet from "helmet";
 import morgan from "morgan";
+import authRoutes from "./routes/auth.js";
 import clientRoutes from "./routes/client.js";
 import managementRoutes from "./routes/management.js";
 import salesRoutes from "./routes/sales.js";
@@ -38,6 +39,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cors());
 
 /* Routes */
+app.use("/", authRoutes);
 app.use("/client", clientRoutes);
 app.use("/general", generalRoutes);
 app.use("/management", managementRoutes);

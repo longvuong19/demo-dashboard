@@ -20,7 +20,7 @@ import Performance from "scenes/performance";
 import LoginPage from "scenes/auth/LoginPage";
 import RegisterPage from "scenes/auth/RegisterPage";
 
-axios.defaults.baseURL = "http://localhost:5001";
+axios.defaults.baseURL = "https://admin-backend-d0nx.onrender.com";
 
 function App() {
   const mode = useSelector((state) => state.global.mode); // nhập mode từ folder state.
